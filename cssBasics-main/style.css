@@ -1,0 +1,36 @@
+.container{
+    border: 3px solid lightgrey;
+    display: flex;
+    flex-direction:column;
+    width: 31rem;
+    font-size: 30px;
+}
+.box:nth-child(odd){
+    width: auto;
+    height: auto;
+    background-color: yellow;
+    vertical-align: top;
+    font-size: 15;
+
+}
+.box:nth-child(even){
+    width: auto;
+    height: auto;
+    background-color: green;
+    vertical-align: top;
+}
+.box:last-of-type{
+    width: auto;
+    height: auto;
+    background-color: blue;
+    color: white;
+    vertical-align: top;
+}
+.box:first-of-type{
+    width: auto;
+    height: auto;
+    background-color: blue;
+    color: white;
+    vertical-align: top;
+}
+
