@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<script>
+    function intialize(){
+        purse = {q:0, d:0, n:0, p:0};
+    }
+    function updateTotal(){
+        total = document.getElementById;
+
+    }
+    function updateCoin(type,add){
+        if(type=='q'){
+            if(add){
+                purse.q++;
+            }
+            if(!add &&purse.q>0){
+                purse.q -= 1;
+            }
+            document.getElementById("qNumber").innerHTML = ("# of quarters: " + purse.q);
+            document.getElementById("qValue").innerHTML = ("Value: $" + (purse.q * .25).toFixed(2));
+        }
+        if(type=="d"){
+            if(add){
+                purse.d++;
+            }
+            if(!add &&purse.d>0){
+                purse.d -= 1;
+            }
+            document.getElementById("dNumber").innerHTML = ("# of dimes: " + purse.d);
+            document.getElementById("dValue").innerHTML = ("Value: $" + (purse.d * .1).toFixed(2));      
+          }
+        if(type=="n"){
+            if(add){
+                purse.n++;
+            }
+            if(!add &&purse.n>0){
+                purse.n -= 1;
+            }
+            document.getElementById("nNumber").innerHTML = ("# of nickels: " + purse.n);
+            document.getElementById("nValue").innerHTML = ("Value: $" + (purse.n * .05).toFixed(2));       
+        }
+        if(type=="p"){
+            if(add){
+                purse.p++;
+            }
+            if(!add &&purse.p>0){
+                purse.p -= 1;
+            }
+            document.getElementById("pNumber").innerHTML = ("# of pennies: " + purse.p);
+            document.getElementById("pValue").innerHTML = ("Value: $" + (purse.p * .01).toFixed(2));    
+            }
+        document.getElementById("total").innerHTML = "Total: $" + (purse.p*.01 + purse.n*.05 + purse.d*.1 + purse.q*.25).toFixed(2);
+    }
+</script>
+<body onload="intialize()">
+    <h1 id="total">Total: $</h1>
+    <p id="qNumber"># of quarters: 0</p>
+    <p id="qValue">Value: $0</p>
+    <button onclick="updateCoin('q',true)"> Add quarter</button>
+    <button onclick="updateCoin('q',false)"> Subtract quarter</button>
+    <p id="dNumber"># of dimes: 0</p>
+    <p id="dValue">Value: $0</p>
+    <button onclick="updateCoin('d',true)"> Add dime</button>
+    <button onclick="updateCoin('d',false)"> Subtract dime</button>
+    <p id="nNumber"># of nickels: 0</p>
+    <p id="nValue">Value: $0</p>
+    <button onclick="updateCoin('n',true)"> Add nickel</button>
+    <button onclick="updateCoin('n',false)"> Subtract nickel</button>
+    <p id="pNumber"># of pennies: 0</p>
+    <p id="pValue">Value: $0</p>
+    <button onclick="updateCoin('p',true)"> Add penny</button>
+    <button onclick="updateCoin('p',false)"> Subtract penny</button>
+</body>
+</html>
